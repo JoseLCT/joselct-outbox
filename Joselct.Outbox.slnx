@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Joselct.Outbox.Core/Joselct.Outbox.Core.csproj" />
+    <Project Path="src/Joselct.Outbox.EFCore/Joselct.Outbox.EFCore.csproj" />
+    <Project Path="src/Joselct.Outbox.MediatR/Joselct.Outbox.MediatR.csproj" />
+  </Folder>
+</Solution>

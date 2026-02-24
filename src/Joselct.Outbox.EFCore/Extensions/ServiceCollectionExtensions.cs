@@ -5,9 +5,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Joselct.Outbox.Core.Policies;
+using Joselct.Outbox.Core.Publishing;
 using Joselct.Outbox.Core.Repositories;
+using Joselct.Outbox.EFCore.Config;
 
-namespace Joselct.Outbox.EFCore.Config;
+namespace Joselct.Outbox.EFCore.Extensions;
 
 public static class ServiceCollectionExtensions
 {
@@ -20,6 +22,7 @@ public static class ServiceCollectionExtensions
             configuration.GetSection(OutboxOptions.SectionName));
 
         services.AddScoped<IOutboxRepository, OutboxRepository<TContext>>();
+        services.AddScoped<IOutboxPublisher, OutboxPublisher>();
 
         services.AddSingleton<IBackoffStrategy>(sp =>
         {

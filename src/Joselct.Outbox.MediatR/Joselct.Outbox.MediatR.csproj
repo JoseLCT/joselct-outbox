@@ -4,14 +4,28 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+
+        <PackageId>Joselct.Outbox.MediatR</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Joselct</Authors>
+        <Description>MediatR dispatcher adapter for Joselct.Outbox.</Description>
+        <PackageTags>outbox;messaging;distributed;mediatr</PackageTags>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryUrl>https://github.com/joselct/joselct-outbox</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Joselct.Outbox.Core\Joselct.Outbox.Core.csproj" />
+        <None Include="README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="MediatR" Version="14.0.0" />
+        <ProjectReference Include="..\Joselct.Outbox.Core\Joselct.Outbox.Core.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MediatR" Version="14.0.0"/>
     </ItemGroup>
 
 </Project>

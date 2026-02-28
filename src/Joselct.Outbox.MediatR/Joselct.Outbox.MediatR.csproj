@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net10.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
 
         <PackageId>Joselct.Outbox.MediatR</PackageId>
-        <Version>1.0.1</Version>
+        <Version>1.0.2</Version>
         <Authors>Joselct</Authors>
         <Description>MediatR dispatcher adapter for Joselct.Outbox.</Description>
         <PackageTags>outbox;messaging;distributed;mediatr</PackageTags>

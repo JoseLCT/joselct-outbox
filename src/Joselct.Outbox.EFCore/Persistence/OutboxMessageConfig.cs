@@ -4,7 +4,7 @@ using Joselct.Outbox.Core.Entities;
 
 namespace Joselct.Outbox.EFCore.Persistence;
 
-internal class OutboxMessageConfig(string schema = "outbox") : IEntityTypeConfiguration<OutboxMessage>
+internal class OutboxMessageConfig : IEntityTypeConfiguration<OutboxMessage>
 {
     public void Configure(EntityTypeBuilder<OutboxMessage> builder)
     {

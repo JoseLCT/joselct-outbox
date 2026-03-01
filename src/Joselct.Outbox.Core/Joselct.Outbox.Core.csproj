@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
 
         <PackageId>Joselct.Outbox.Core</PackageId>
-        <Version>1.0.2</Version>
+        <Version>1.0.3</Version>
         <Authors>Joselct</Authors>
         <Description>Core abstractions for the Joselct Outbox pattern implementation.</Description>
         <PackageTags>outbox;messaging;distributed;patterns</PackageTags>

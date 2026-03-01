@@ -9,13 +9,10 @@ public class OutboxMessage
     public Guid Id { get; private set; }
     public string Type { get; private set; } = string.Empty;
     public string Payload { get; private set; } = string.Empty;
-
     public int RetryCount { get; private set; }
-
     public string? CorrelationId { get; private set; }
     public string? TraceId { get; private set; }
     public string? SpanId { get; private set; }
-
     public DateTime CreatedAt { get; private set; }
     public DateTime? ProcessedAt { get; private set; }
     public DateTime? NextRetryAt { get; private set; }
@@ -34,9 +31,7 @@ public class OutboxMessage
         return new OutboxMessage
         {
             Id = Guid.NewGuid(),
-            Type = typeof(T).AssemblyQualifiedName
-                   ?? typeof(T).FullName
-                   ?? typeof(T).Name,
+            Type = typeof(T).FullName ?? typeof(T).Name,
             Payload = JsonSerializer.Serialize(content),
             CreatedAt = DateTime.UtcNow,
             NextRetryAt = DateTime.UtcNow,
@@ -77,7 +72,7 @@ public class OutboxMessage
         NextRetryAt = DateTime.UtcNow.Add(delay);
     }
 
-    public bool HasExceededRetries(int maxRetries) => RetryCount >= maxRetries;
     public bool IsProcessed => ProcessedAt.HasValue;
+    public bool IsDeadLetter => !IsProcessed && NextRetryAt is null && RetryCount > 0;
     public bool IsReadyToProcess => NextRetryAt.HasValue && NextRetryAt <= DateTime.UtcNow;
 }

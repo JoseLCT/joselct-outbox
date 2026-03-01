@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
 
         <PackageId>Joselct.Outbox.EFCore</PackageId>
-        <Version>1.0.3</Version>
+        <Version>1.0.4</Version>
         <Authors>Joselct</Authors>
         <Description>Entity Framework Core implementation for Joselct.Outbox.</Description>
         <PackageTags>outbox;messaging;distributed;efcore;entityframework</PackageTags>

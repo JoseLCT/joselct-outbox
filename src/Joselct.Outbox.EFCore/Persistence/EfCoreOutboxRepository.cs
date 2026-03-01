@@ -1,14 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Joselct.Outbox.Core.Entities;
-using Joselct.Outbox.Core.Repositories;
+﻿using Joselct.Outbox.Core.Entities;
+using Joselct.Outbox.Core.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Joselct.Outbox.EFCore.Persistence;
 
-public class OutboxRepository<TContext> : IOutboxRepository where TContext : DbContext
+public class EfCoreOutboxRepository<TContext> : IOutboxRepository where TContext : DbContext
 {
     private readonly TContext _dbContext;
 
-    public OutboxRepository(TContext dbContext)
+    public EfCoreOutboxRepository(TContext dbContext)
     {
         _dbContext = dbContext;
     }
@@ -30,8 +30,8 @@ public class OutboxRepository<TContext> : IOutboxRepository where TContext : DbC
             .ToListAsync(ct);
     }
 
-    public Task CommitAsync(CancellationToken ct = default)
+    public void Update(OutboxMessage message)
     {
-        return _dbContext.SaveChangesAsync(ct);
+        _dbContext.Set<OutboxMessage>().Update(message);
     }
 }

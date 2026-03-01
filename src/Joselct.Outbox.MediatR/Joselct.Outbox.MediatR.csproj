@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
 
         <PackageId>Joselct.Outbox.MediatR</PackageId>
-        <Version>1.0.2</Version>
+        <Version>1.0.3</Version>
         <Authors>Joselct</Authors>
         <Description>MediatR dispatcher adapter for Joselct.Outbox.</Description>
         <PackageTags>outbox;messaging;distributed;mediatr</PackageTags>
@@ -26,6 +26,7 @@
 
     <ItemGroup>
         <PackageReference Include="MediatR" Version="14.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
     </ItemGroup>
 
 </Project>

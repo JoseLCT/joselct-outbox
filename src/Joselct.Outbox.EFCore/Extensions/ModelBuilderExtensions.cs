@@ -5,9 +5,9 @@ namespace Joselct.Outbox.EFCore.Extensions;
 
 public static class ModelBuilderExtensions
 {
-    public static ModelBuilder ConfigureOutbox(this ModelBuilder modelBuilder, string schema = "outbox")
+    public static ModelBuilder ConfigureOutbox(this ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfiguration(new OutboxMessageConfig(schema));
+        modelBuilder.ApplyConfiguration(new OutboxMessageConfig());
         return modelBuilder;
     }
 }

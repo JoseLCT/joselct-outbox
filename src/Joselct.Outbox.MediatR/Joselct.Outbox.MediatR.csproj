@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
 
         <PackageId>Joselct.Outbox.MediatR</PackageId>
-        <Version>1.0.4</Version>
+        <Version>1.0.5</Version>
         <Authors>Joselct</Authors>
         <Description>MediatR dispatcher adapter for Joselct.Outbox.</Description>
         <PackageTags>outbox;messaging;distributed;mediatr</PackageTags>

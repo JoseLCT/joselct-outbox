@@ -32,7 +32,7 @@ public class OutboxWorker : BackgroundService
         {
             try
             {
-                using var scope = _scopeFactory.CreateAsyncScope();
+                await using var scope = _scopeFactory.CreateAsyncScope();
                 var processor = scope.ServiceProvider.GetRequiredService<OutboxProcessor>();
                 await processor.ProcessPendingAsync(stoppingToken);
             }
